@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: bearing-friction-torque-web
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn friction_torque_app:app
+    healthCheckPath: /healthz
