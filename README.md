@@ -5,6 +5,10 @@
 ## Files
 
 - `friction_torque_app.py`: 单文件 Flask 应用，包含计算模型、页面模板、输入校验、CSV 导出和健康检查
+
+计算核心区分两种弹性模量约定：Hertz 接触使用两体约化模量 `E*`，Hamrock-Dowson 无量纲组使用其文献约定的 `2E*`；`lambda` 使用最小膜厚，油膜剪切使用中央膜厚。总摩擦力矩由各接触滑动耗散功率之和除以轴角速度得到。
+
+滑滚比、压黏阻尼和极限剪应力仍是工程代理参数，绝对力矩必须用供应商曲线或台架数据标定；本工具更适合趋势比较和敏感性筛查。
 - `requirements.txt`: Python 依赖
 - `render.yaml`: Render Blueprint 配置
 - `README.md`: 使用说明
